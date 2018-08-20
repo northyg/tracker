@@ -1,0 +1,45 @@
+<!-- Form that lets you enter in new data -->
+<h1>New Exercise Entry:</h1>
+Name: 
+<input type="text" name="newName" id="newName"><br>
+Reps: 
+<input type="text" name="newReps" id="newReps"><br>
+Weight: 
+<input type="text" name="newWeight" id="newWeight"><br>
+Lbs?: 
+<input type="checkbox" name="newLbs" value="newLbs" id="newLbs"><br>
+Date: YYYY-MM-DD
+<input type="text" name="newDate" id="newDate"><br>
+<input type="submit" value="Submit" onclick="newExercise();">
+
+<h1>Exercise Table:</h1>
+<br><br>
+
+<table border="1" id="exerciseTable">
+<tr>
+  <th>Name</th>
+  <th>Reps</th>
+  <th>Weight</th>
+  <th>Units</th>
+  <th>Date</th>
+  <th>Edit</th>
+  <th>Delete</th>
+</tr>
+  {{#each results}}
+  <tr id="{{this.id}}">
+    <td>{{this.name}}</td>
+    <td>{{this.reps}}</td>
+    <td>{{this.weight}}</td>
+    <td>
+      {{#if this.lbs}}
+        Lbs
+      {{else}}
+        Kg
+      {{/if}}
+    </td>
+    <td>{{this.date}}</td>
+    <td><input type="submit" value="Edit" onclick="editCell({{this.id}});"></td>
+    <td><input type="submit" value="Delete" onclick="deleteCell({{this.id}});"></td>
+  </tr>
+  {{/each}}
+</table>
