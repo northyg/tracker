@@ -1,5 +1,5 @@
 # tracker
-Exercise tracker website with MySql database interactions
+Exercise tracker website with MySql database interactions for class project
 
 - Single webpage workout tracker that uses dynamic Ajax interactions to GET or POST to the Sql database.
 
@@ -12,3 +12,4 @@ The data flow is as follows:
   * Request: Ajax -> Node Server -> MySQL 
 
   * Respond: mySQL -> Node Server -> Ajax
+
